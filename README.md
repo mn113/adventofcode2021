@@ -4,7 +4,7 @@ https://adventofcode.com/2021
 
 | Puzzle | Completion | Python | Ruby | Elixir | PHP | other |
 |--------|------------|:------:|:----:|:------:|:---:|:-----:|
-| [Day 1: Sonar Sweep](https://adventofcode.com/2021/day/1) | :star: :star: | :snake: [08.py](python3/01.py) | - | :heart_decoration: [01.exs](elixir/01.exs) | - | - |
+| [Day 1: Sonar Sweep](https://adventofcode.com/2021/day/1) | :star: :star: | :snake: [01.py](python3/01.py) | - | :heart_decoration: [01.exs](elixir/01.exs) | - | - |
 
 ## Python
 
