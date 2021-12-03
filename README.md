@@ -8,6 +8,7 @@ https://adventofcode.com/2021
 |--------|------------|:------:|:----:|:------:|:---:|:-----:|
 | [Day 1: Sonar Sweep](https://adventofcode.com/2021/day/1) | :star: :star: | :snake: [01.py](python3/01.py) | - | :heart_decoration: [01.exs](elixir/01.exs) | - | - |
 | [Day 2: Dive!](https://adventofcode.com/2021/day/2) | :star: :star: | - | - | :heart_decoration: [02.exs](elixir/02.exs) | - | - |
+| [Day 3: Binary Diagnostic](https://adventofcode.com/2021/day/3) | :star: :star: | - | - | :heart_decoration: [03.exs](elixir/03.exs) | - | - |
 
 ## Python
 
