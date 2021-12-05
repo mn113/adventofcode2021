@@ -35,7 +35,7 @@ defmodule Day05 do
 
       # diagonals allowed
       Keyword.get(opts, :allow_diagonals) ->
-        for {x, y} <- Enum.zip(xrange, yrange), do: {x, y}
+        Enum.zip(xrange, yrange)
 
       # diagonals ignored
       true ->
