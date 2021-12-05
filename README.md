@@ -10,7 +10,7 @@ https://adventofcode.com/2021
 | [Day 2: Dive!](https://adventofcode.com/2021/day/2) | :star: :star: | - | - | :heart_decoration: [02.exs](elixir/02.exs) | - | - |
 | [Day 3: Binary Diagnostic](https://adventofcode.com/2021/day/3) | :star: :star: | - | - | :heart_decoration: [03.exs](elixir/03.exs) | - | - |
 | [Day 4: Giant Squid](https://adventofcode.com/2021/day/4) | :star: :star: | :snake: [04.py](python3/04.py) | - | - | - | - |
-| [Day 5: Hydrothermal Venture](https://adventofcode.com/2021/day/5) | :star: :star: | - | - | :heart_decoration: [05.exs](elixir/05.exs) | - | - |
+| [Day 5: Hydrothermal Venture](https://adventofcode.com/2021/day/5) | :star: :star: | - | - | :heart_decoration: [05.exs](elixir/05.exs) | :elephant: [05.php](php/05.php) | - |
 
 ## Python
 
@@ -18,7 +18,7 @@ Run a solution
 
 ```
 cd python3
-python3 08.py
+python3 01.py
 ```
 
 ## Ruby
@@ -50,7 +50,7 @@ Run a solution
 
 ```
 cd php
-php 01.php
+php 05.php
 ```
 
 ## Elixir
