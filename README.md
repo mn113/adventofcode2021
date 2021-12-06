@@ -1,6 +1,6 @@
 # Advent of Code 2021
 
-![](https://img.shields.io/badge/stars%20⭐-8-yellow) ![](https://img.shields.io/badge/days%20completed-4-red)
+![](https://img.shields.io/badge/stars%20⭐-12-yellow) ![](https://img.shields.io/badge/days%20completed-6-red)
 
 https://adventofcode.com/2021
 
@@ -11,6 +11,7 @@ https://adventofcode.com/2021
 | [Day 3: Binary Diagnostic](https://adventofcode.com/2021/day/3) | :star: :star: | - | - | :heart_decoration: [03.exs](elixir/03.exs) | - | - |
 | [Day 4: Giant Squid](https://adventofcode.com/2021/day/4) | :star: :star: | :snake: [04.py](python3/04.py) | - | - | - | - |
 | [Day 5: Hydrothermal Venture](https://adventofcode.com/2021/day/5) | :star: :star: | - | - | :heart_decoration: [05.exs](elixir/05.exs) | :elephant: [05.php](php/05.php) | - |
+| [Day 6: Lanternfish](https://adventofcode.com/2021/day/6) | :star: :star: | - | - | - | :heart_decoration: [06.exs](elixir/06.exs) | - |
 
 ## Python
 
