@@ -1,6 +1,6 @@
 # Advent of Code 2021
 
-![](https://img.shields.io/badge/stars%20⭐-12-yellow) ![](https://img.shields.io/badge/days%20completed-6-red)
+![](https://img.shields.io/badge/stars%20⭐-14-yellow) ![](https://img.shields.io/badge/days%20completed-7-red)
 
 https://adventofcode.com/2021
 
@@ -12,6 +12,7 @@ https://adventofcode.com/2021
 | [Day 4: Giant Squid](https://adventofcode.com/2021/day/4) | :star: :star: | :snake: [04.py](python3/04.py) | - | - | - | - |
 | [Day 5: Hydrothermal Venture](https://adventofcode.com/2021/day/5) | :star: :star: | - | - | :heart_decoration: [05.exs](elixir/05.exs) | :elephant: [05.php](php/05.php) | - |
 | [Day 6: Lanternfish](https://adventofcode.com/2021/day/6) | :star: :star: | - | - | :heart_decoration: [06.exs](elixir/06.exs) | - | - |
+| [Day 7: The Treachery of Whales](https://adventofcode.com/2021/day/7) | :star: :star: | - | :rotating_light: [07.rb](ruby/07.rb) | - | - | - |
 
 ## Python
 
@@ -29,20 +30,6 @@ Run a solution
 ```
 cd ruby
 ruby 01.rb
-```
-
-Install test deps
-
-```
-cd ruby
-gem install
-```
-
-Run tests
-
-```
-cd ruby
-bundle exec rake spec
 ```
 
 ## PHP
@@ -75,6 +62,5 @@ node 18.js
 ## TODO
 
 - module runner system for some langs
-- test framework for some langs
 - document more comprehensively
-- Github actions test run
+- visual output
