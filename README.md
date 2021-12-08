@@ -17,6 +17,8 @@ https://adventofcode.com/2021
 
 ## Python
 
+> Python Version: 3.9
+
 Run a solution
 
 ```
@@ -25,6 +27,8 @@ python3 01.py
 ```
 
 ## Ruby
+
+> Ruby Version: 2.4
 
 Run a solution
 
@@ -35,6 +39,8 @@ ruby 01.rb
 
 ## PHP
 
+> PHP Version: 7.3
+
 Run a solution
 
 ```
@@ -44,6 +50,8 @@ php 05.php
 
 ## Elixir
 
+> Python Version: 1.13
+
 Run a solution
 
 ```
@@ -52,6 +60,8 @@ elixir -r 01.exs -e Day01.part1
 ```
 
 ## NodeJS
+
+> Node Version: 14
 
 Run a solution
 
