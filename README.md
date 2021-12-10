@@ -14,6 +14,7 @@ https://adventofcode.com/2021
 | [Day 6: Lanternfish](https://adventofcode.com/2021/day/6) | :star: :star: | - | - | :heart_decoration: [06.exs](elixir/06.exs) | - | - |
 | [Day 7: The Treachery of Whales](https://adventofcode.com/2021/day/7) | :star: :star: | - | :rotating_light: [07.rb](ruby/07.rb) | - | - | - |
 | [Day 8: Seven Segment Search](https://adventofcode.com/2021/day/8) | :star: :star: | - | :rotating_light: [08.rb](ruby/08.rb) | - | - | - |
+| [Day 9: Smoke Basin](https://adventofcode.com/2021/day/9) | :star: :star: | - | :rotating_light: [09.rb](ruby/09.rb) | - | - | - |
 
 ## Python
 
