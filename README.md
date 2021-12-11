@@ -1,6 +1,6 @@
 # Advent of Code 2021
 
-![](https://img.shields.io/badge/days%20completed-10-red) ![](https://img.shields.io/badge/stars%20⭐-20-yellow)
+![](https://img.shields.io/badge/days%20completed-11-red) ![](https://img.shields.io/badge/stars%20⭐-22-yellow)
 
 https://adventofcode.com/2021
 
@@ -16,6 +16,7 @@ https://adventofcode.com/2021
 | [Day 8: Seven Segment Search](https://adventofcode.com/2021/day/8)  | 3 | 4 | :star: :star: | - | :rotating_light: [08.rb](ruby/08.rb) | - | - | - |
 | [Day 9: Smoke Basin](https://adventofcode.com/2021/day/9)  | 3 | 4 | :star: :star: | - | :rotating_light: [09.rb](ruby/09.rb) | - | - | - |
 | [Day 10: Syntax Scoring](https://adventofcode.com/2021/day/10)  | 2 | 2 | :star: :star: | - | :rotating_light: [10.rb](ruby/10.rb) | - | - | - |
+| [Day 11: Dumbo Octopus](https://adventofcode.com/2021/day/11)  | 2 | 3 | :star: :star: | - | :rotating_light: [11.rb](ruby/11.rb) | - | - | - |
 
 ## Python
 
