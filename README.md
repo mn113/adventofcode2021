@@ -1,6 +1,6 @@
 # Advent of Code 2021
 
-![](https://img.shields.io/badge/days%20completed-11-red) ![](https://img.shields.io/badge/stars%20⭐-22-yellow)
+![](https://img.shields.io/badge/days%20completed-12-red) ![](https://img.shields.io/badge/stars%20⭐-24-yellow)
 
 https://adventofcode.com/2021
 
@@ -17,16 +17,17 @@ https://adventofcode.com/2021
 | [Day 9: Smoke Basin](https://adventofcode.com/2021/day/9)  | 3 | 4 | :star: :star: | - | :rotating_light: [09.rb](ruby/09.rb) | - | - | - |
 | [Day 10: Syntax Scoring](https://adventofcode.com/2021/day/10)  | 2 | 2 | :star: :star: | - | :rotating_light: [10.rb](ruby/10.rb) | - | - | - |
 | [Day 11: Dumbo Octopus](https://adventofcode.com/2021/day/11)  | 2 | 3 | :star: :star: | - | :rotating_light: [11.rb](ruby/11.rb) | - | - | - |
+| [Day 12: Passage Pathing](https://adventofcode.com/2021/day/12)  | 4 | 3 | :star: :star: | - | - | :heart_decoration: [12.exs](elixir/12.exs) | - | - |
 
-## Python
+## Elixir
 
-> Python Version: 3.9
+> Elixir Version: 1.13
 
 Run a solution
 
 ```
-cd python3
-python3 01.py
+cd elixir
+elixir -r 01.exs -e Day01.part1
 ```
 
 ## Ruby
@@ -40,6 +41,17 @@ cd ruby
 ruby 01.rb
 ```
 
+## Python
+
+> Python Version: 3.9
+
+Run a solution
+
+```
+cd python3
+python3 01.py
+```
+
 ## PHP
 
 > PHP Version: 7.3
@@ -50,18 +62,6 @@ Run a solution
 cd php
 php 05.php
 ```
-
-## Elixir
-
-> Python Version: 1.13
-
-Run a solution
-
-```
-cd elixir
-elixir -r 01.exs -e Day01.part1
-```
-
 ## NodeJS
 
 > Node Version: 14
