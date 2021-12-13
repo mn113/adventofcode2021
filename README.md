@@ -1,6 +1,6 @@
 # Advent of Code 2021
 
-![](https://img.shields.io/badge/days%20completed-12-red) ![](https://img.shields.io/badge/stars%20⭐-24-yellow)
+![](https://img.shields.io/badge/days%20completed-13-red) ![](https://img.shields.io/badge/stars%20⭐-26-yellow)
 
 https://adventofcode.com/2021
 
@@ -18,6 +18,7 @@ https://adventofcode.com/2021
 | [Day 10: Syntax Scoring](https://adventofcode.com/2021/day/10)  | 2 | 2 | :star: :star: | - | :rotating_light: [10.rb](ruby/10.rb) | - | - | - |
 | [Day 11: Dumbo Octopus](https://adventofcode.com/2021/day/11)  | 2 | 3 | :star: :star: | - | :rotating_light: [11.rb](ruby/11.rb) | - | - | - |
 | [Day 12: Passage Pathing](https://adventofcode.com/2021/day/12)  | 4 | 3 | :star: :star: | - | - | :heart_decoration: [12.exs](elixir/12.exs) | - | - |
+| [Day 13: Transparent Origami](https://adventofcode.com/2021/day/13)  | 1 | 3 | :star: :star: | - | - | - | - | :jack_o_lantern: [13.js](js/13.js) |
 
 ## Elixir
 
