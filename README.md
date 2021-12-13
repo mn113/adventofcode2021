@@ -12,7 +12,7 @@ https://adventofcode.com/2021
 | [Day 4: Giant Squid](https://adventofcode.com/2021/day/4)  | 3 | 4 | :star: :star: | :snake: [04.py](python3/04.py) | - | - | - | - |
 | [Day 5: Hydrothermal Venture](https://adventofcode.com/2021/day/5)  | 2 | 2 | :star: :star: | - | - | :heart_decoration: [05.exs](elixir/05.exs) | :elephant: [05.php](php/05.php) | - |
 | [Day 6: Lanternfish](https://adventofcode.com/2021/day/6)  | 2 | 4 | :star: :star: | - | - | :heart_decoration: [06.exs](elixir/06.exs) | - | - |
-| [Day 7: The Treachery of Whales](https://adventofcode.com/2021/day/7)  | 1 | 2 | :star: :star: | - | :rotating_light: [07.rb](ruby/07.rb) | - | - | - |
+| [Day 7: The Treachery of Whales](https://adventofcode.com/2021/day/7)  | 1 | 2 | :star: :star: | - | :rotating_light: [07.rb](ruby/07.rb) | :heart_decoration: [07.exs](elixir/07.exs) | - | - |
 | [Day 8: Seven Segment Search](https://adventofcode.com/2021/day/8)  | 3 | 4 | :star: :star: | - | :rotating_light: [08.rb](ruby/08.rb) | - | - | - |
 | [Day 9: Smoke Basin](https://adventofcode.com/2021/day/9)  | 3 | 4 | :star: :star: | - | :rotating_light: [09.rb](ruby/09.rb) | - | - | - |
 | [Day 10: Syntax Scoring](https://adventofcode.com/2021/day/10)  | 2 | 2 | :star: :star: | - | :rotating_light: [10.rb](ruby/10.rb) | - | - | - |
