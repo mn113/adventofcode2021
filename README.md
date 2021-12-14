@@ -15,7 +15,7 @@ https://adventofcode.com/2021
 | [Day 7: The Treachery of Whales](https://adventofcode.com/2021/day/7)  | 1 | 2 | :star: :star: | - | :rotating_light: [07.rb](ruby/07.rb) | :heart_decoration: [07.exs](elixir/07.exs) | - | - | - |
 | [Day 8: Seven Segment Search](https://adventofcode.com/2021/day/8)  | 3 | 4 | :star: :star: | - | :rotating_light: [08.rb](ruby/08.rb) | - | - | - | - |
 | [Day 9: Smoke Basin](https://adventofcode.com/2021/day/9)  | 3 | 4 | :star: :star: | - | :rotating_light: [09.rb](ruby/09.rb) | - | - | - | - |
-| [Day 10: Syntax Scoring](https://adventofcode.com/2021/day/10)  | 2 | 2 | :star: :star: | - | :rotating_light: [10.rb](ruby/10.rb) | - | - | - | - |
+| [Day 10: Syntax Scoring](https://adventofcode.com/2021/day/10)  | 2 | 2 | :star: :star: | - | :rotating_light: [10.rb](ruby/10.rb) | :heart_decoration: [10.exs](elixir/10.exs) | - | - | - |
 | [Day 11: Dumbo Octopus](https://adventofcode.com/2021/day/11)  | 2 | 3 | :star: :star: | - | :rotating_light: [11.rb](ruby/11.rb) | - | - | - | - |
 | [Day 12: Passage Pathing](https://adventofcode.com/2021/day/12)  | 4 | 3 | :star: :star: | - | - | :heart_decoration: [12.exs](elixir/12.exs) | - | - | - |
 | [Day 13: Transparent Origami](https://adventofcode.com/2021/day/13)  | 1 | 3 | :star: :star: | - | - | - | :elephant: [13.php](php/13.php) | :jack_o_lantern: [13.js](js/13.js) | - |
