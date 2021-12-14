@@ -19,6 +19,7 @@ https://adventofcode.com/2021
 | [Day 11: Dumbo Octopus](https://adventofcode.com/2021/day/11)  | 2 | 3 | :star: :star: | - | :rotating_light: [11.rb](ruby/11.rb) | - | - | - | - |
 | [Day 12: Passage Pathing](https://adventofcode.com/2021/day/12)  | 4 | 3 | :star: :star: | - | - | :heart_decoration: [12.exs](elixir/12.exs) | - | - | - |
 | [Day 13: Transparent Origami](https://adventofcode.com/2021/day/13)  | 1 | 3 | :star: :star: | - | - | - | :elephant: [13.php](php/13.php) | :jack_o_lantern: [13.js](js/13.js) | - |
+| [Day 14: Extended Polymerization](https://adventofcode.com/2021/day/13)  | 3 | 3 | :star: :star: | :snake: [14.py](python3/14.py) | - | - | - | - | - |
 
 ## Elixir
 
