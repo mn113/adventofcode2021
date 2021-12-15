@@ -1,10 +1,6 @@
 # Advent of Code 2021
 
-<<<<<<< HEAD
 ![](https://img.shields.io/badge/days%20completed-15-red) ![](https://img.shields.io/badge/stars%20⭐-30-yellow)
-=======
-![](https://img.shields.io/badge/days%20completed-14-red) ![](https://img.shields.io/badge/stars%20⭐-28-yellow)
->>>>>>> 52b49063d6e86208451a1eeeea08c45377e1a285
 
 https://adventofcode.com/2021
 
