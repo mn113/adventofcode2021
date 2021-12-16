@@ -1,6 +1,6 @@
 # Advent of Code 2021
 
-![](https://img.shields.io/badge/days%20completed-15-red) ![](https://img.shields.io/badge/stars%20⭐-30-yellow)
+![](https://img.shields.io/badge/days%20completed-15-red) ![](https://img.shields.io/badge/stars%20⭐-31-yellow)
 
 https://adventofcode.com/2021
 
@@ -21,6 +21,7 @@ https://adventofcode.com/2021
 | [Day 13: Transparent Origami](https://adventofcode.com/2021/day/13)  | 1 | 3 | :star: :star: | - | - | - | :elephant: [13.php](php/13.php) | :jack_o_lantern: [13.js](js/13.js) | - |
 | [Day 14: Extended Polymerization](https://adventofcode.com/2021/day/14)  | 3 | 3 | :star: :star: | :snake: [14.py](python3/14.py) | - | - | - | - | - |
 | [Day 15: Chiton](https://adventofcode.com/2021/day/15)  | 4 | 2 | :star: :star: | :snake: [15.py](python3/15.py) | - | - | - | - | - |
+| [Day 16: Packet Decoder](https://adventofcode.com/2021/day/16)  |  |  | :star: | - | - | - | - | :jack_o_lantern: [16.js](js/16.js) | - |
 
 ## Elixir
 
