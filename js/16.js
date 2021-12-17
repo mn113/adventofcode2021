@@ -41,9 +41,9 @@ function decode_literal(bitstr) {
 
 /**
  * @typedef {Packet}
- * @property {Number} version
- * @property {Number} type
- * @property {Number} value
+ * @property {Integer} version
+ * @property {Integer} type
+ * @property {Integer} value
  * @property {Packet[]} children
  */
 class Packet {
@@ -59,18 +59,11 @@ class Packet {
             this.children.push(subpacket);
         }
     }
-
-    // toString() {
-    //     return `[ V${this.version}, T${this.type}, L${this.value}, c:[${this.children.join(',')}] ]`;
-    // }
 }
 
 /**
  * Decode a binary string and all its subpackets
  * @param {String} bitstr
- * @param {Object} options
- * @param {Number} options.sublength
- * @param {Number} options.subcount
  * @returns {Packet} packet hierarchy
  */
 function decode_packets(bitstr, debug = false) {
@@ -131,12 +124,12 @@ function decode_packets(bitstr, debug = false) {
 }
 
 /**
- * Sums the versions of all packets
+ * Recursively sums the versions of all packets
  * @param {Packet} pkt
- * @returns {Number}
+ * @returns {Integer}
  */
 function sum_versions(pkt) {
-    sum = pkt.version;
+    let sum = pkt.version;
     if (pkt.children && pkt.children.length) {
         sum += pkt.children.reduce(
             (acc, child_pkt) => acc + sum_versions(child_pkt),
@@ -146,21 +139,118 @@ function sum_versions(pkt) {
     return sum;
 }
 
-let hex1 = "D2FE28" // 110100101111111000101000
-let hex2 = "38006F45291200" // 00111000000000000110111101000101001010010001001000000000
-let hex3 = "EE00D40C823060" // 11101110000000001101010000001100100000100011000001100000
-let hex4 = "8A004A801A8002F478" // Sv16 OK
-let hex5 = "620080001611562C8802118E34" // Sv12 OK
-let hex6 = "C0015000016115A2E0802F182340" // Sv23
-let hex7 = "A0016C880162017C3686B18A3D4780" // Sv31
+/**
+ * Recursively evaluates the value of the outermost packet
+ * @param {Packet} pkt
+ * @returns {Integer}
+ */
+function evaluate_packet_value(pkt, debug = false) {
+    let res;
+    switch (pkt.type) {
+        case 4: // literal
+        debug && p('4:', pkt.value);
+            return pkt.value;
 
-p(sum_versions(decode_packets(hex2bin(hex4)).pkt)); // 16
-p(sum_versions(decode_packets(hex2bin(hex5)).pkt)); // 12
-p(sum_versions(decode_packets(hex2bin(hex6)).pkt)); // 23
-p(sum_versions(decode_packets(hex2bin(hex7)).pkt)); // 31
+        case 0: // sum
+            res = pkt.children.reduce(
+                (acc, child_pkt) => acc + evaluate_packet_value(child_pkt, debug),
+                0
+            );
+            debug && p('0/+:', res);
+            return res;
 
-let { pkt: root_pkts } = decode_packets(hex2bin(input));
-p(insp(root_pkts, { depth: 6 }));
+        case 1: // product
+            res = pkt.children.reduce(
+                (acc, child_pkt) => acc * evaluate_packet_value(child_pkt, debug),
+                1
+            );
+            debug && p('1/*:', res);
+            return res;
 
-let s = sum_versions(root_pkts);
-p(`Part 1: ${s}`); // 938
+        case 2: // min
+            res = pkt.children.reduce(
+                (acc, child_pkt) => {
+                    let child_val = evaluate_packet_value(child_pkt, debug);
+                    return child_val < acc ? child_val : acc;
+                },
+                Infinity
+            );
+            debug && p('2/min:', res);
+            return res;
+
+        case 3: // max
+            res = pkt.children.reduce(
+                (acc, child_pkt) => {
+                    let child_val = evaluate_packet_value(child_pkt, debug);
+                    return child_val > acc ? child_val : acc;
+                },
+                0
+            );
+            debug && p('3/max:', res);
+            return res;
+
+        case 5: // gt
+            res = evaluate_packet_value(pkt.children[0], debug) > evaluate_packet_value(pkt.children[1], debug) ? 1 : 0;
+            debug && p('5/gt:', res);
+            return res;
+
+        case 6: // lt
+            res = evaluate_packet_value(pkt.children[0], debug) < evaluate_packet_value(pkt.children[1], debug) ? 1 : 0;
+            debug && p('6/lt:', res);
+            return res;
+
+        case 7: // eq
+            res = evaluate_packet_value(pkt.children[0], debug) === evaluate_packet_value(pkt.children[1], debug) ? 1 : 0;
+            debug && p('7/eq:', res);
+            return res;
+
+        default:
+            throw new Error(`Packet has type ${pkt.type}`);
+    }
+}
+
+const tests = [
+    {
+        hex1: "D2FE28", // 110100101111111000101000
+        hex2: "38006F45291200", // 00111000000000000110111101000101001010010001001000000000
+        hex3: "EE00D40C823060" // 11101110000000001101010000001100100000100011000001100000
+    },
+    {
+        hex4: "8A004A801A8002F478", // Sv16 OK
+        hex5: "620080001611562C8802118E34", // Sv12 OK
+        hex6: "C0015000016115A2E0802F182340", // Sv23
+        hex7: "A0016C880162017C3686B18A3D4780" // Sv31
+    },
+    {
+        hex8: "C200B40A82", // 3
+        hex9: "04005AC33890", // 54
+        hex10: "880086C3E88112", // 7
+        hex11: "CE00C43D881120", // 9
+        hex12: "D8005AC2A8F0", // 1
+        hex13: "F600BC2D8F", // 0
+        hex14: "9C005AC2F8F0", // 0
+        hex15: "9C0141080250320F1802104A08" // 1
+    }
+];
+
+// p("Hex2bin tests:");
+// Object.values(tests[0]).forEach(hex => {
+//     p(hex, '->', hex2bin(hex));
+// });
+
+// p("Sum of versions tests:");
+// Object.values(tests[1]).forEach(hex => {
+//     p(hex, '->', sum_versions(decode_packets(hex2bin(hex)).pkt));
+// });
+
+// p("Evaluated values tests:");
+// Object.values(tests[2]).forEach(hex => {
+//     p(hex, '->', evaluate_packet_value(decode_packets(hex2bin(hex)).pkt));
+// });
+
+let root_pkts = decode_packets(hex2bin(input)).pkt;
+// p(insp(root_pkts, { depth: 6 }));
+
+p("---");
+p(`Part 1: ${sum_versions(root_pkts)}`); // 938
+p(`Part 2: ${evaluate_packet_value(root_pkts)}`); // 1495959086337
