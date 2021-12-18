@@ -1,6 +1,6 @@
 # Advent of Code 2021
 
-![](https://img.shields.io/badge/days%20completed-17-red) ![](https://img.shields.io/badge/stars%20⭐-34-yellow)
+![](https://img.shields.io/badge/days%20completed-18-red) ![](https://img.shields.io/badge/stars%20⭐-36-yellow)
 
 https://adventofcode.com/2021
 
@@ -23,6 +23,7 @@ https://adventofcode.com/2021
 | [Day 15: Chiton](https://adventofcode.com/2021/day/15)  | 4 | 2 | :star: :star: | :snake: [15.py](python3/15.py) | - | - | - | - | - |
 | [Day 16: Packet Decoder](https://adventofcode.com/2021/day/16)  | 4 | 4 | :star: :star: | - | - | - | - | :jack_o_lantern: [16.js](js/16.js) | - |
 | [Day 17: Trick Shot](https://adventofcode.com/2021/day/17)  | 2 | 3 | :star: :star: | - | :rotating_light: [17.rb](ruby/17.rb) | - | - | - | - |
+| [Day 18: Snailfish](https://adventofcode.com/2021/day/18)  | 4 | 3 | :star: :star: | - | :rotating_light: [18.rb](ruby/18.rb) | - | - | - | - |
 
 ## Elixir
 
@@ -80,6 +81,5 @@ node 18.js
 
 ## TODO
 
-- module runner system for some langs
 - document more comprehensively
 - visual output
