@@ -61,10 +61,9 @@ def enhance(image, algo)
     new_image
 end
 
-# Surround image 2 to 3 times !!! so all the cells - inner and outer - can be safely processed
+# Surround image 2 times (!!) so all the cells - inner and outer - can be safely processed
 def surround_generously(image, char)
     image = surround_by_where_needed(image, char)
-    image = surround_by_all_sides(image, char)
     image = surround_by_all_sides(image, char)
 end
 
