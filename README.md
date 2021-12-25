@@ -30,7 +30,7 @@ https://adventofcode.com/2021
 | [Day 22: Reactor Reboot](https://adventofcode.com/2021/day/22) | 5 | 3 | :star: | - | :rotating_light: [22.rb](ruby/22.rb) | - | - | - | - |
 | [Day 23: Amphipod](https://adventofcode.com/2021/day/23) | 4 | 2 | :star: :star: | - | - | - | - | - | By hand |
 | [Day 24: Arithmetic Logic Unit](https://adventofcode.com/2021/day/24) | 5 | 4 | - | - | - | - | - | - | - |
-| [Day 25: ](https://adventofcode.com/2021/day/25) | 2 | 4 | :star: | :snake: [25.py](python3/25.py) | - | - | - | - | - |
+| [Day 25: Sea Cucumber](https://adventofcode.com/2021/day/25) | 2 | 4 | :star: | :snake: [25.py](python3/25.py) | - | - | - | - | - |
 
 ## Elixir
 
