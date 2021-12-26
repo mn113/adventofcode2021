@@ -1,6 +1,6 @@
 # Advent of Code 2021
 
-![](https://img.shields.io/badge/days%20completed-20-red) ![](https://img.shields.io/badge/stars%20⭐-43-yellow)
+![](https://img.shields.io/badge/days%20completed-21-red) ![](https://img.shields.io/badge/stars%20⭐-45-yellow)
 
 https://adventofcode.com/2021
 
@@ -29,7 +29,7 @@ https://adventofcode.com/2021
 | [Day 21: Dirac Dice](https://adventofcode.com/2021/day/21) | 5 | 3 | :star: | - | - | - | :elephant: [21.php](php/21.php) | - | - |
 | [Day 22: Reactor Reboot](https://adventofcode.com/2021/day/22) | 5 | 3 | :star: | - | :rotating_light: [22.rb](ruby/22.rb) | - | - | - | - |
 | [Day 23: Amphipod](https://adventofcode.com/2021/day/23) | 4 | 2 | :star: :star: | - | - | - | - | - | By hand |
-| [Day 24: Arithmetic Logic Unit](https://adventofcode.com/2021/day/24) | 5 | 4 | - | - | - | - | - | - | - |
+| [Day 24: Arithmetic Logic Unit](https://adventofcode.com/2021/day/24) | 5 | 4 | :star: :star: | - | - | - | - | :jack_o_lantern: [24.js](js/24.js) | - |
 | [Day 25: Sea Cucumber](https://adventofcode.com/2021/day/25) | 2 | 4 | :star: | :snake: [25.py](python3/25.py) | - | - | - | - | - |
 
 ## Elixir
