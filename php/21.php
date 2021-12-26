@@ -1,6 +1,6 @@
 <?php
 
-// globals
+// P1 globals
 $positions = [7,1];
 $scores = [0,0];
 $nextNum = 0;
@@ -33,7 +33,7 @@ while ($scores[0] < 1000 && $scores[1] < 1000) {
 $product = $rolls * min($scores);
 echo "Part 1: $product" . PHP_EOL;
 
-
+/*****************/
 
 function advance($pos, $roll) {
     $pos += $roll;
@@ -42,12 +42,6 @@ function advance($pos, $roll) {
     }
     return $pos;
 }
-
-print(advance(1,9));
-print(advance(5,5));
-print(advance(5,6));
-print(advance(9,9));
-print(EOF);
 
 function play_quantum_game() {
     # 27 dice roll outcomes for {1,2,3}*{1,2,3}*{1,2,3}
@@ -70,90 +64,94 @@ function play_quantum_game() {
         4 => 3,
         3 => 1
     ];
+    $winning_score = 21;
 
-    // incomplete
-    // nested keys represent: turn => p1score => p2score => p1pos => p2pos
-    // value: games count
-    $initialstate = [0 => [0 => [0 => [4 => [8 => 1]]]]];
+    // nested keys represent: turn => p1pos => p2pos => p1score => p2score
+    // final value: count of active games in this state
+    $initialstate = [0 => [7 => [1 => [0 => [0 => 1]]]]];
     $gamestates = $initialstate;
-    // completed
+    // completed counters
     $p1games = 0;
     $p2games = 0;
 
-    $player = 0;
     $rounds = 0;
-    while ($rounds < 10) {
+    while ($rounds <= 21) {
         $rounds++;
-        echo "-ROUND $rounds\n";
-        foreach ($quantum_diceroll_frequencies as $roll => $freq) {
-            //echo " -ROLL $roll\n";
-            //echo " - " . count($gamestates) . " gamestates\n";
-            foreach ($gamestates as $turn => $state0) {
-                // take turns viewing half of all gamestates
-                if ($turn !== $player) continue;
-                //echo "  -TURN $turn\n";
-                $nextTurn = ($turn + 1) % 2;
+        // echo "-ROUND $rounds\n";
+        $turn = ($rounds - 1) % 2;
+        $nextTurn = $rounds % 2;
+        $state0 = $gamestates[$turn];
+        if (!$state0) continue;
 
-                foreach ($state0 as $p => $state1) {
-                    foreach ($state1 as $q => $state2) {
-                        foreach ($state2 as $s => $state3) {
-                            // ignore completed games
-                            if ($s >= 21) continue;
-                            foreach ($state3 as $t => $count) {
-                                // ignore completed games
-                                if ($t >= 21) continue;
-                                //echo "   -STATE $p-$q $s-$t\n";
-
-                                // unset old count - this state is history
-                                // $gamestates[$turn][$p][$q][$s][$t] = 0;
-
-                                // update current player's pos & score
-                                if ($turn == 0) {
-                                    $p = advance($p, $roll);
-                                    $s += $p;
-                                    // log won games
-                                    if ($s >= 21) {
-                                        //echo "   -victorious winner is p1 $s-$t\n";
-                                        $p1games += $count + $freq;
-                                        // add new blank game
-                                        $gamestates = array_merge_recursive($gamestates, $initialstate);
-                                        continue;
-                                    }
-                                } else {
-                                    $q = advance($q, $roll);
-                                    $t += $q;
-                                    // log won games
-                                    if ($t >= 21) {
-                                        //echo "   -game won by p2 $s-$t\n";
-                                        $p2games += $count + $freq;
-                                        // add new blank game
-                                        $gamestates = array_merge_recursive($gamestates, $initialstate);
-                                        //print_r($gamestates);
-                                        continue;
-                                    }
-                                }
-
-                                // store new count
-                                if (!$gamestates[$nextTurn][$p]) $gamestates[$nextTurn][$p] = [];
-                                if (!$gamestates[$nextTurn][$p][$q]) $gamestates[$nextTurn][$p][$q] = [];
-                                if (!$gamestates[$nextTurn][$p][$q][$s]) $gamestates[$nextTurn][$p][$q][$s] = [];
-
-                                if (!$gamestates[$nextTurn][$p][$q][$s][$t]) {
-                                    $gamestates[$nextTurn][$p][$q][$s][$t] = $freq;
-                                } else {
-                                    $gamestates[$nextTurn][$p][$q][$s][$t] = $count + $freq;
-                                }
-                                //echo "    -stored [$nextTurn][$p][$q][$s][$t] ". ($count + $freq) . " games\n";
+        foreach ($state0 as $p => $state1) {
+            foreach ($state1 as $q => $state2) {
+                foreach ($state2 as $s => $state3) {
+                    // ignore completed games
+                    if ($s >= 21) continue;
+                    foreach ($state3 as $t => $count) {
+                        // ignore completed games
+                        if ($t >= 21) continue;
+                        // echo "  -STATE pos $p-$q sco $s-$t games $count\n"; // these values musn't be changed in this loop
+                        // roll all dice combinations
+                        foreach ($quantum_diceroll_frequencies as $roll => $freq) {
+                            // echo "   -ROLL $roll\n";
+                            $newfreq = $count * $freq;
+                            // update current player's pos & score
+                            if ($turn == 0) {
+                                $p1 = advance($p, $roll);
+                                $q1 = $q;
+                                $s1 = $s + $p1;
+                                $t1 = $t;
+                            } else {
+                                $p1 = $p;
+                                $q1 = advance($q, $roll);
+                                $s1 = $s;
+                                $t1 = $t + $q1;
                             }
+                            // log won games
+                            if ($s1 >= $winning_score) {
+                                // echo "   -victorious winner is p1 $s1-$t1. gains $newfreq games\n";
+                                $p1games += $newfreq;
+                                continue;
+                            } else if ($t1 >= $winning_score) {
+                                // echo "   -game won by p2 $s1-$t1. gains $newfreq games\n";
+                                $p2games += $newfreq;
+                                continue;
+                            } else {
+                                // game still alive
+                                // store new count under next turn
+                                if (!$gamestates[$nextTurn]) $gamestates[$nextTurn] = [];
+                                if (!$gamestates[$nextTurn][$p1]) $gamestates[$nextTurn][$p1] = [];
+                                if (!$gamestates[$nextTurn][$p1][$q1]) $gamestates[$nextTurn][$p1][$q1] = [];
+                                if (!$gamestates[$nextTurn][$p1][$q1][$s1]) $gamestates[$nextTurn][$p1][$q1][$s1] = [];
+
+                                if (!$gamestates[$nextTurn][$p1][$q1][$s1][$t1]) {
+                                    $gamestates[$nextTurn][$p1][$q1][$s1][$t1] = $newfreq;
+                                } else {
+                                    $gamestates[$nextTurn][$p1][$q1][$s1][$t1] += $newfreq;
+                                }
+                                // echo "    -stored [$nextTurn][$p1][$q1][$s1][$t1] ". $gamestates[$nextTurn][$p1][$q1][$s1][$t1] . " games\n";
+                            }
+                        }
+                        // all rolls now added, eliminate exhausted gamestate
+                        unset($gamestates[$turn][$p][$q][$s][$t]);
+                        if (!count($gamestates[$turn][$p][$q][$s])) {
+                            unset($gamestates[$turn][$p][$q][$s]);
+                        }
+                        if (!count($gamestates[$turn][$p][$q])) {
+                            unset($gamestates[$turn][$p][$q]);
+                        }
+                        if (!count($gamestates[$turn][$p])) {
+                            unset($gamestates[$turn][$p]);
+                        }
+                        if (!count($gamestates[$turn])) {
+                            unset($gamestates[$turn]);
                         }
                     }
                 }
             }
-            // play passes
-            $player = $nextTurn;
         }
     }
-    // print_r($gamestates);
-    echo "$p1games $p2games";
+    return max($p1games, $p2games);
 }
-play_quantum_game();
+echo "Part 2: " . play_quantum_game() . PHP_EOL;
